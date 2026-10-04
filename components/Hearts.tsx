@@ -1,0 +1,1 @@
+export default function Hearts(){return <div className="hearts">{Array.from({length:14},(_,i)=><span key={i} className="heart" style={{left:`${(i*73)%100}%`,bottom:`${(i%4)*3}%`,animationDelay:`${i*.45}s`,fontSize:`${12+(i%4)*5}px`}}>♡</span>)}</div>}
