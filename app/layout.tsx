@@ -1,12 +1,25 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import HeartBackground from "@/components/HeartBackground";
 
 export const metadata: Metadata = {
   title: "For Swati — My Jannu",
   description: "A little birthday surprise made with love.",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1"
 };
 
-export default function RootLayout({children}:{children:React.ReactNode}) {
-  return <html lang="en"><body>{children}</body></html>;
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>
+        <HeartBackground />
+        {children}
+      </body>
+    </html>
+  );
 }
